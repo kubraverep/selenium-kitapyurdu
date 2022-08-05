@@ -73,9 +73,7 @@ public class KitapyurduTest extends BaseTest {
              // "book was not added to cart!");
         homePage.goToCart();
 
-
     }
-
 
 
     //ürün miktarını bir adet arttır
