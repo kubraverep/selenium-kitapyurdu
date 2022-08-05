@@ -71,21 +71,28 @@ public class KitapyurduTest extends BaseTest {
         //Sepete kitap eklenmiş mi?
        //Assertions.assertTrue(cartPage.checkIfBookAdded(),
              // "book was not added to cart!");
+
+
+    }
+
+    @Test
+    @Order(5)
+    public void go_to_cart() {
+
         homePage.goToCart();
 
     }
 
-
     //ürün miktarını bir adet arttır
     @Test
-    @Order(5)
+    @Order(6)
     public void ıncrease_the_quantity_of_book() {
         cartPage.productCountUp("2");
     }
 
     //yenileme butonuna bas
     @Test
-    @Order(6)
+    @Order(7)
     public void click_the_refresh_button() {
         cartPage.refreshToCount();
 
@@ -97,7 +104,7 @@ public class KitapyurduTest extends BaseTest {
 
     //çarpı butonuna bas
     @Test
-    @Order(7)
+    @Order(8)
     public void click_the_cross_button() {
         cartPage.removeProduct();
         //Sepet boş mu?

@@ -13,7 +13,7 @@ public class HomePage extends BasePage{
     //By cartCountLocator = By.xpath("//span[@id='cart-items-text']");
     By cartContainerLocator = By.id("sprite-cart-icon");
 
-    By  goToCartLocator = By.xpath("//a[@id='js-checkout']");
+    By  goToCartLocator = By.id("js-checkout");
     public HomePage(WebDriver driver) {
         super(driver);
         searchBox = new SearchBox(driver);

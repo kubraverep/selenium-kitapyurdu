@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest {
     WebDriver driver;
     //web driver oluşturup başlatılacak ve istenen sayfaya gidilcek.
-    @Test
+
     @BeforeAll//her şeyden önce
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -18,9 +18,7 @@ public class BaseTest {
         driver.get("https://www.kitapyurdu.com/");
         driver.manage().window().maximize();//ekran açıldıktan sonra büyüt
     }
-    @AfterAll//her şeyden sonra
-    public void tearDown(){
-        driver.quit();
-    }//driverı kapat
+    //@AfterAll//her şeyden sonra
+   // public void tearDown(){driver.quit();}//driverı kapat
 
 }
