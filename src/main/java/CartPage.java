@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CartPage extends BasePage {
 
-    By bookNameLocator =  By.xpath("//img[@style='max-height:80px;']");
+    //By bookNameLocator =  By.xpath("//img[@style='max-height:80px;']");
     By quantityBoxLocator= By.xpath("//input[@name='quantity']");
     By refreshButtonLocator=  By.className("fa fa-refresh green-icon");
     By refreshingCartLocator= By.className("swal2-title ky-swal-title-single");
@@ -18,14 +18,10 @@ public class CartPage extends BasePage {
     }
     //sepetteki ürün elementi 0dan büyükse sepete ürün eklenmiş demektir.
 
-    public boolean checkIfBookAdded() {
-        return getProducts().size() > 0 ;
-    }
+    //public boolean checkIfBookAdded() {return getProducts().size() > 0 ;}
 
     //sepetteki tüm ürünleri döner
-    private List<WebElement> getProducts(){
-        return findAll(bookNameLocator);
-    }
+   // private List<WebElement> getProducts(){return findAll(bookNameLocator);}
 
     public void productCountUp(String text) {
         //quantity box'ı bul ve oraya istenilen adeti yaz.
