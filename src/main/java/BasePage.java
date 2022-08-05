@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 
 import java.util.List;
 
@@ -33,5 +35,8 @@ public class BasePage {
     //görünüp görünmediğini bulan metod
     public Boolean isDisplayed(By locator){
         return find(locator).isDisplayed();
+    }
+    public void enter(){
+        driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
     }
 }

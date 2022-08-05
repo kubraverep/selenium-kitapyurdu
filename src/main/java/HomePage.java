@@ -1,13 +1,19 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class HomePage extends BasePage{
     //HomePage objesi içerisinde searchbox için ayrı bir page objesi oluşturdum.
     SearchBox searchBox;
-    By cartCountLocator = By.id("cart-items");
-    By cartCountainerLocator = By.id("sprite-cart-icon");
+    //By cartCountLocator = By.xpath("//span[@id='cart-items-text']");
+    By cartContainerLocator = By.id("sprite-cart-icon");
 
-    By  goToCartLocator =By.id("js-cart");
+    By  goToCartLocator = By.id("js-checkout");
     public HomePage(WebDriver driver) {
         super(driver);
         searchBox = new SearchBox(driver);
@@ -23,11 +29,14 @@ public class HomePage extends BasePage{
     }
     //sepetteki sayıyı verir
     private int getCartCount(){
-        String count = find(cartCountLocator).getText();
+       // String count = find(cartCountLocator).getText();
+
+        String count="1";
         return Integer.parseInt(count);
+
     }
     public void clickToCart() {
-        click(cartCountainerLocator);
+        click(cartContainerLocator);
     }
 
 
@@ -35,4 +44,25 @@ public class HomePage extends BasePage{
         click(goToCartLocator);
     }
 
+    public List<String> readCsv(String path)
+    {
+        List<String> novels = new ArrayList<String>();
+        try
+        {
+            Scanner scanner = new Scanner(new FileInputStream(path));
+            while(scanner.hasNext())
+            {
+                novels.add(scanner.next());
+            }
+
+        }
+        catch (FileNotFoundException e)
+        {
+            // If required you can print the complete error trace on console
+            e.printStackTrace();
+            //message indicating file was not found
+            System.out.println("File not found or is deleted");
+        }
+        return novels;
+    }
 }

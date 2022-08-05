@@ -13,5 +13,6 @@ public class SearchBox extends BasePage{
         //searchBox'ı bul ve oraya istenilen texti yaz.
         type(searchBoxLocator, text);
         click(submitButtonLocator);
+
     }
 }
